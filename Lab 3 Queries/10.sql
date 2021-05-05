@@ -1,0 +1,2 @@
+SELECT SUM(o_totalprice) FROM orders, customer, region, nation
+WHERE r_name = 'EUROPE' AND o_orderdate LIKE '1996%' AND r_regionkey = n_regionkey AND n_nationkey = c_nationkey AND c_custkey = o_custkey

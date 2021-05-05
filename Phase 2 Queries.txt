@@ -1,0 +1,68 @@
+1. INSERT INTO incident(i_alarmMod, i_camMod, i_date, i_culpritName, i_equipment, i_address, i_badgeNum) 
+VALUES(100000, 0000001, '10-01-2019', 'Greg Markson', 'Police baton', '10 San Jose', 123445);
+
+2. DELETE FROM guard
+WHERE g_salary = '60000';
+
+3. SELECT a_model FROM alarm
+WHERE a_type = 'Sensor'
+GROUP BY a_model
+ORDER BY a_price DESC;
+
+4. UPDATE incident
+SET i_culpritName = 'Dan' WHERE i_culpritName = 'Greg Markson';
+
+5. CREATE INDEX equipment_index ON equipment (
+	e_defenseWep
+);
+
+6. SELECT a_price, i_equipment FROM incident, alarm
+WHERE i_alarmMod = a_model;
+
+7. INSERT INTO camera(c_model, c_storage, c_lens, c_price, c_recordingStatus)
+VALUES(92398, 30, 'Wide-Angle', 700, 'Not Recording');
+
+8. SELECT COUNT(DISTINCT a_model) FROM alarm;
+
+9. SELECT l_date FROM camera, location, alarm
+WHERE l_camMod = c_model AND l_alarmMod = a_model;
+
+10. DELETE FROM alarm
+WHERE a_price = '500' AND a_sound = 'Soft/Quiet';
+
+11. UPDATE guard
+SET g_defenseWep = 'pistol'
+WHERE g_defenseWep = 'shotgun';
+
+12. SELECT l_possession
+FROM location
+WHERE l_address = '5200 N. Lake Rd';
+
+13. INSERT INTO equipment (e_price, e_alarmMod, e_camMod, e_vehicle, e_handcuffs, e_radio, e_defenseWep)
+VALUES (1200, 50, 40, "Jeep Durango", "used" , "Toshiba", "rifle");
+
+14. SELECT i_badgeNum, i_date 
+FROM incident, guard, location
+WHERE  i_badgeNum = g_badgeNum
+AND i_date = l_date;
+
+15. SELECT COUNT (DISTINCT l_possession) FROM location;
+
+16. UPDATE guard
+SET g_armedStatus = 'false'
+WHERE g_arrivalStatus = 'not arrived';
+
+17. INSERT INTO alarm (a_model, a_type, a_price, a_sound, a_range)
+VALUES (12312, "ALERT", "$600", "SIREN", "800FT");
+
+18. DELETE FROM equipment
+WHERE e_defenseWep = 'rocket launcher' AND e_price = '$4500';
+
+19. SELECT l_camMod FROM location
+WHERE l_address = 'Bellevue Ave'
+GROUP BY l_camMod
+ORDER BY l_date;
+
+20. UPDATE incident
+SET i_badgeNum = '40335921'
+WHERE i_badgeNum = '38439209';

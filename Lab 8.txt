@@ -1,0 +1,86 @@
+3. insert into customer_index Execution time: 0.197 seconds
+
+insert into customer_noindex Execution time: 0.158 seconds
+
+insert into supplier_index Execution time: 0.146 seconds
+
+insert into supplier_noindex Execution time: 0.100 seconds
+
+insert into orders_index Execution time: 0.513 seconds
+
+insert into orders_noindex Execution time: 0.150 seconds
+
+insert into lineitem_index Execution time: 0.766 seconds
+
+insert into lineitem_noindex Execution time: 0.639 seconds
+
+Across the eight tables, it seems that inserting all of the data into a table with an index takes longer than a table without an index.
+
+4. CREATE INDEX customer_mktsegment_index ON customer_index (
+    c_mktsegment
+); Takes 0.097 seconds
+
+CREATE INDEX lineitem_returnflag_index ON lineitem_index (
+    l_returnflag
+); Execution time: 0.156 seconds
+
+CREATE INDEX orders_priority_index ON orders_index (
+    o_orderpriority
+); Execution time: 0.309 seconds
+
+5. Query 1 (index) Execution time: 0.003 seconds
+Query 1 (noindex) Execution time: 0.066 seconds
+
+Query 2 (index) Execution time: 0.113 seconds
+Query 2 (noindex) Execution time: 0.027 seconds
+
+Query 3 (index) Execution time: 0.005 seconds
+Query 3 (noindex) Execution time: 0.002 seconds
+
+Query 4 (index) Execution time: 0.064 seconds
+Query 4 (noindex) Execution time: 0.066 seconds
+
+Query 5 (index) Execution time: 0.004 seconds
+Query 5 (noindex) Execution time: 0.069 seconds
+
+Query 6 (index) Execution time: 0.008 seconds
+Query 6 (noindex) Execution time: 0.009 seconds
+
+Query 7 (index) Execution time: 0.190 seconds
+Query 7 (noindex) Execution time: 0.190 seconds
+
+Query 8 (index) Execution time: 0.019 seconds
+Query 8 (noindex) Execution time: 0.004 seconds
+
+Query 9 (index) Execution time: 0.018 seconds
+Query 9 (noindex) Execution time: 0.002 seconds
+
+Query 10 (index) Execution time: 0.052 seconds
+Query 10 (noindex) Execution time: 0.047 seconds
+
+Query 11 (index) Execution time: 0.688 seconds
+Query 11 (noindex) Execution time: 0.231 seconds
+
+Query 12 (index) Execution time: 0.043 seconds
+Query 12 (noindex) Execution time: 0.042 seconds
+
+Query 13 (index) Execution time: 0.003 seconds
+Query 13 (noindex) Execution time: 0.004 seconds
+
+Query 14 (index) Execution time: 0.019 seconds
+Query 14 (noindex) Execution time: 0.019 seconds
+
+Query 15 (index) Execution time: 0.228 seconds
+Query 15 (noindex) Execution time: 0.254 seconds
+
+6. UPDATE lineitem_index
+SET l_discount = l_discount + 0.05; Execution time: 1.205 seconds
+
+UPDATE lineitem_noindex
+SET l_discount = l_discount + 0.05; Execution time: 1.222 seconds
+
+7. UPDATE supplier_index
+SET s_acctbal = s_acctbal + 1000; Execution time: 0.167 seconds
+
+UPDATE supplier_noindex
+SET s_acctbal = s_acctbal + 1000; Execution time: 0.217 seconds

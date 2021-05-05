@@ -1,0 +1,2 @@
+SELECT COUNT(o_orderdate) FROM orders, customer, nation
+WHERE n_name = 'BRAZIL' AND o_orderpriority = '1-URGENT' AND julianday(o_orderdate) >= julianday('1994-01-01') AND julianday(o_orderdate) <= julianday('1997-12-31') AND o_custkey = c_custkey AND n_nationkey = c_nationkey;

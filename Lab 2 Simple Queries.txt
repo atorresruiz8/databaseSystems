@@ -1,0 +1,9 @@
+SELECT c_name FROM customer
+WHERE c_custkey = '1' ORDER BY c_name
+
+SELECT * FROM nation;
+
+SELECT n_comment FROM nation;
+
+SELECT o_orderkey FROM orders
+WHERE o_custkey = 1 GROUP BY o_orderstatus;
